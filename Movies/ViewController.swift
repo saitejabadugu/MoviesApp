@@ -11,7 +11,12 @@ class ViewController: UIViewController {
 
     var model: FilmModel?
     
-    lazy var tableView = UITableView()
+    lazy var moviesTableView:  UITableView = {
+        let tableView = UITableView()
+        tableView.backgroundColor = .white
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Box")
+        return tableView
+    }()
     
     lazy var helloWorldLabel: UILabel = {
         var label = UILabel()
@@ -32,13 +37,12 @@ class ViewController: UIViewController {
     }
     
     func setUpTableView() {
-        tableView.backgroundColor = .white
-        tableView.delegate = self
-        tableView.dataSource = self
+        moviesTableView.delegate = self
+        moviesTableView.dataSource = self
     }
     
     func setUpUI() {
-        self.view.addSubview(tableView)
+        self.view.addSubview(moviesTableView)
         //self.view.addSubview(helloWorldLabel)
         
         NSLayoutConstraint.activate([
@@ -48,8 +52,9 @@ class ViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),*/
 
             
-            tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            moviesTableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            moviesTableView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            moviesTableView.heightAnchor.constraint(equalToConstant: 120)
             
             
             /*helloWorldLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -64,14 +69,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Box", for: indexPath) as UITableViewCell
         cell.backgroundColor = .darkGray
         cell.textLabel?.text = "Keeethu"
         return cell
     }
-    
-    
-    
-    
 }
 
