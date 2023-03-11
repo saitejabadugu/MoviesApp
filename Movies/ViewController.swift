@@ -11,24 +11,18 @@ class ViewController: UIViewController {
 
     var model: FilmModel?
     
-    lazy var moviesTableView:  UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .white
+    lazy var moviesTableView: UITableView = {
+        let tableView = UITableView(frame: .infinite, style: .plain)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Box")
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
-    }()
-    
-    lazy var helloWorldLabel: UILabel = {
-        var label = UILabel()
-        label.text = "Hello World"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        view.backgroundColor = .white
         getFilmModel()
+        setUpTableView()
         setUpUI()
     }
     
@@ -43,36 +37,33 @@ class ViewController: UIViewController {
     
     func setUpUI() {
         self.view.addSubview(moviesTableView)
-        //self.view.addSubview(helloWorldLabel)
         
         NSLayoutConstraint.activate([
-            /*tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-            tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),*/
-
-            
-            moviesTableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            moviesTableView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            moviesTableView.heightAnchor.constraint(equalToConstant: 120)
-            
-            
-            /*helloWorldLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            helloWorldLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor)*/
+            moviesTableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            moviesTableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
+            moviesTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            moviesTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return model?.Search?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Box", for: indexPath) as UITableViewCell
-        cell.backgroundColor = .darkGray
-        cell.textLabel?.text = "Keeethu"
+        cell.backgroundColor = .cyan
+        cell.textLabel?.text = model?.Search?[indexPath.row].Title
+        cell.textLabel?.numberOfLines = 0
+        cell.detailTextLabel?.text = model?.Search?[indexPath.row].Year
+        cell.detailTextLabel?.numberOfLines = 0
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 
