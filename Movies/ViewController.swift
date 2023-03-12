@@ -12,9 +12,10 @@ class ViewController: UIViewController {
     var model: FilmModel?
     
     lazy var moviesTableView: UITableView = {
-        let tableView = UITableView(frame: .infinite, style: .plain)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Box")
+        let tableView = UITableView()
+        tableView.register(FilmCell.self, forCellReuseIdentifier: FilmCell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         return tableView
     }()
 
@@ -53,12 +54,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Box", for: indexPath) as UITableViewCell
-        cell.backgroundColor = .cyan
-        cell.textLabel?.text = model?.Search?[indexPath.row].Title
-        cell.textLabel?.numberOfLines = 0
-        cell.detailTextLabel?.text = model?.Search?[indexPath.row].Year
-        cell.detailTextLabel?.numberOfLines = 0
+        let cell = tableView.dequeueReusableCell(withIdentifier: FilmCell.reuseIdentifier, for: indexPath) as! FilmCell
+        cell.setupData(model: model?.Search?[indexPath.row])
         return cell
     }
     

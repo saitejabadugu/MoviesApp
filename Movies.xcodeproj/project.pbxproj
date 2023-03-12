@@ -18,6 +18,7 @@
 		56BF796429BCF2F8004B55AB /* FilmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF796329BCF2F8004B55AB /* FilmModel.swift */; };
 		56BF796729BCF38A004B55AB /* ApiIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF796629BCF38A004B55AB /* ApiIntegration.swift */; };
 		56BF796A29BCF415004B55AB /* moviesList.json in Resources */ = {isa = PBXBuildFile; fileRef = 56BF796929BCF415004B55AB /* moviesList.json */; };
+		56D9964A29BDBE790097EB62 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D9964929BDBE790097EB62 /* FilmCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		56BF796329BCF2F8004B55AB /* FilmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmModel.swift; sourceTree = "<group>"; };
 		56BF796629BCF38A004B55AB /* ApiIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiIntegration.swift; sourceTree = "<group>"; };
 		56BF796929BCF415004B55AB /* moviesList.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = moviesList.json; sourceTree = "<group>"; };
+		56D9964929BDBE790097EB62 /* FilmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 		56BF792829BCE7BB004B55AB /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				56D9964829BDBE260097EB62 /* CustomCells */,
 				56BF796829BCF3E3004B55AB /* Resources */,
 				56BF796529BCF35C004B55AB /* Api */,
 				56BF796229BCF2D7004B55AB /* Models */,
@@ -155,6 +158,14 @@
 				56BF796929BCF415004B55AB /* moviesList.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		56D9964829BDBE260097EB62 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				56D9964929BDBE790097EB62 /* FilmCell.swift */,
+			);
+			path = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 				56BF792E29BCE7BB004B55AB /* ViewController.swift in Sources */,
 				56BF792A29BCE7BB004B55AB /* AppDelegate.swift in Sources */,
 				56BF792C29BCE7BB004B55AB /* SceneDelegate.swift in Sources */,
+				56D9964A29BDBE790097EB62 /* FilmCell.swift in Sources */,
 				56BF796429BCF2F8004B55AB /* FilmModel.swift in Sources */,
 				56BF796729BCF38A004B55AB /* ApiIntegration.swift in Sources */,
 			);
