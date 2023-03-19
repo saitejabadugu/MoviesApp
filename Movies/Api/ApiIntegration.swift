@@ -20,4 +20,18 @@ class ApiIntegration {
         }
         return nil
     }
+    
+    static func getFilmDetail() -> FilmDetailModel? {
+        guard let filePath = Bundle.main.path(forResource: "filmDetail", ofType: "json") else {return nil }
+        let url = URL.init(fileURLWithPath: filePath)
+        do {
+            let jsonData = try Data(contentsOf: url)
+            let model =  try JSONDecoder().decode(FilmDetailModel.self, from: jsonData)
+            return model
+        } catch let error {
+            print("error = \(error) and \(error.localizedDescription)")
+        }
+        return nil
+    }
+    
 }

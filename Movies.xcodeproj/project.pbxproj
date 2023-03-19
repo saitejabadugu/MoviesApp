@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5635819C29C4DF4200B8B40C /* filmDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 5635819B29C4DF4200B8B40C /* filmDetail.json */; };
+		5635819F29C4E07A00B8B40C /* FilmDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5635819E29C4E07A00B8B40C /* FilmDetailModel.swift */; };
+		563581A229C4E47400B8B40C /* FilmDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563581A129C4E47400B8B40C /* FilmDetailVC.swift */; };
 		56BF792A29BCE7BB004B55AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF792929BCE7BB004B55AB /* AppDelegate.swift */; };
 		56BF792C29BCE7BB004B55AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF792B29BCE7BB004B55AB /* SceneDelegate.swift */; };
 		56BF792E29BCE7BB004B55AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BF792D29BCE7BB004B55AB /* ViewController.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5635819B29C4DF4200B8B40C /* filmDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = filmDetail.json; sourceTree = "<group>"; };
+		5635819E29C4E07A00B8B40C /* FilmDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailModel.swift; sourceTree = "<group>"; };
+		563581A129C4E47400B8B40C /* FilmDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetailVC.swift; sourceTree = "<group>"; };
 		56BF792629BCE7BB004B55AB /* Movies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56BF792929BCE7BB004B55AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56BF792B29BCE7BB004B55AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		563581A029C4E42600B8B40C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				56BF792D29BCE7BB004B55AB /* ViewController.swift */,
+				563581A129C4E47400B8B40C /* FilmDetailVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		56BF791D29BCE7BB004B55AB = {
 			isa = PBXGroup;
 			children = (
@@ -105,13 +120,13 @@
 		56BF792829BCE7BB004B55AB /* Movies */ = {
 			isa = PBXGroup;
 			children = (
+				563581A029C4E42600B8B40C /* Controllers */,
 				56D9964829BDBE260097EB62 /* CustomCells */,
 				56BF796829BCF3E3004B55AB /* Resources */,
 				56BF796529BCF35C004B55AB /* Api */,
 				56BF796229BCF2D7004B55AB /* Models */,
 				56BF792929BCE7BB004B55AB /* AppDelegate.swift */,
 				56BF792B29BCE7BB004B55AB /* SceneDelegate.swift */,
-				56BF792D29BCE7BB004B55AB /* ViewController.swift */,
 				56BF793229BCE7BC004B55AB /* Assets.xcassets */,
 				56BF793429BCE7BC004B55AB /* LaunchScreen.storyboard */,
 				56BF793729BCE7BC004B55AB /* Info.plist */,
@@ -140,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				56BF796329BCF2F8004B55AB /* FilmModel.swift */,
+				5635819E29C4E07A00B8B40C /* FilmDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -156,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				56BF796929BCF415004B55AB /* moviesList.json */,
+				5635819B29C4DF4200B8B40C /* filmDetail.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -274,6 +291,7 @@
 			files = (
 				56BF793629BCE7BC004B55AB /* LaunchScreen.storyboard in Resources */,
 				56BF793329BCE7BC004B55AB /* Assets.xcassets in Resources */,
+				5635819C29C4DF4200B8B40C /* filmDetail.json in Resources */,
 				56BF796A29BCF415004B55AB /* moviesList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,7 +318,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				56BF792E29BCE7BB004B55AB /* ViewController.swift in Sources */,
+				563581A229C4E47400B8B40C /* FilmDetailVC.swift in Sources */,
 				56BF792A29BCE7BB004B55AB /* AppDelegate.swift in Sources */,
+				5635819F29C4E07A00B8B40C /* FilmDetailModel.swift in Sources */,
 				56BF792C29BCE7BB004B55AB /* SceneDelegate.swift in Sources */,
 				56D9964A29BDBE790097EB62 /* FilmCell.swift in Sources */,
 				56BF796429BCF2F8004B55AB /* FilmModel.swift in Sources */,

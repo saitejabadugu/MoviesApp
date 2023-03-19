@@ -62,5 +62,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("didselectcalled----")
+        navigateToDetailVC()
+    }
+}
+
+extension ViewController {
+    func navigateToDetailVC() {
+        let vc = FilmDetailVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
